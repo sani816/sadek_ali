@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="company-icon.png" alt="Company Icon">
+            <span>JEELANI INTERIOR DESIGNS</span>
+        </div>
+        <nav>
+            <a href="#" onclick="loadPage('home')">Home</a>
+            <div class="dropdown">
+                <a href="#" onclick="toggleDropdown()">Projects</a>
+                <div id="dropdown-menu" class="dropdown-menu">
+                    <a href="#" onclick="loadPage('room.html')">Room</a>
+                    <a href="#" onclick="loadPage('hall.html')">Hall</a>
+                    <a href="#" onclick="loadPage('dining.html')">Dining</a>
+                    <a href="#" onclick="loadPage('kitchen.html')">Kitchen</a>
+                </div>
+            </div>
+            <a href="#" onclick="loadPage('about.html')">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="content">
+        <div class="company-info">
+            <h1>WELCOME TO JEELANI INTERIORS</h1>
+            <p>E x c l u s i v e | S t y l i s h | U n i q ue</p>
+            <p>We build and design people’s dream homes</p> <!-- Corrected from <p1> -->
+        </div>
+    </main>
+
+    <!-- Fixed Contact Section -->
+    <footer class="fixed-footer">
+        <div class="contact-icons">
+            <a href="https://wa.me/your-number" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+            <a href="https://instagram.com/your-profile" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://facebook.com/your-profile" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+        </div>
+        <div class="contact-info">
+            <a href="tel:+919764712061">+919764712061</a>
+            <a href="alisksadek71@gmail.com">alisksadek71@gmail.com</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
