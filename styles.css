@@ -1,7 +1,7 @@
 /* General Styles */
 body, html {
-    margin: 0;
-    padding: 0;
+    margin: -9;
+    padding:0;
     font-family: Arial, sans-serif;
     position: relative;
     color: #333;
@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 25px;
     background-color: #031b2d;
     color: #fff;
     font-family: 'Lucida', serif; /* Apply the custom font */
@@ -45,6 +45,7 @@ header nav a {
     text-decoration: none;
     margin-left: 20px;
 }
+
 
 /* Main Content */
 main {
@@ -101,7 +102,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: -3px;
 }
 
 .fixed-footer .contact-icons {
@@ -111,7 +112,7 @@ main {
 .fixed-footer .contact-icons img {
     width: 25px;
     height: 25px;
-    margin: 0 10px;
+    margin: 0 9px;
 }
 
 .fixed-footer .contact-info {
@@ -202,52 +203,67 @@ main {
     }
 }
 
-/* Gallery layout for Room page */
-.room-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between cards */
-    justify-content: center; /* Center the cards */
-    margin-top: 20px;
+.carousel-container {
+  position: relative;
+  margin: 100px auto; /* space from header/footer */
+  max-width: 90%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-/* Card styling */
-.card {
-    flex: 1 1 calc(33.33% - 20px); /* Adjust to fit 3 cards in a row with gap */
-    max-width: 450px; /* Maximum width for larger screens */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-    animation: slideIn 1s ease-out;
-    font-family: calibori;
-    
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* for Firefox */
 }
 
-.card:hover {
-    transform: scale(1.05); /* Hover effect */
+.carousel::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari */
 }
 
-/* Image styling */
-.card img {
-    width: 100%;
-    height: 300px; /* Fixed height for images */
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.carousel-item {
+  min-width: 30px;
+  margin: 0 10px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Description text styling */
-.card p {
-    padding: 10px;
-    font-size: 1em;
-    color: #333;
+.carousel-item img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+
+.carousel-btn.left {
+  margin-right: 10px;
+}
+
+.carousel-btn.right {
+  margin-left: 10px;
+}
+
+
+/* Button */
+.order-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e067c2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.order-button:hover {
+    background-color: #005fa3;
 }
 
 /* Responsive adjustments */
-@media (max-width: 800px) {
+@media (max-width: 500px) {
     .card {
         flex: 1 1 calc(50% - 20px); /* 2 cards on smaller screens */
     }
@@ -258,6 +274,7 @@ main {
         flex: 1 1 100%; /* 1 card on very small screens */
     }
     
+    
 }
 /* Why Choose Us Section Styling */
 .why-choose-us {
@@ -266,4 +283,57 @@ main {
     border-radius: 10px;
     color: #ffffff;
     box-shadow: #555;
+}
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#confirmationMessage {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(143, 16, 20);
+    margin-top: 20px;
+}
+.carousel-item h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #b23d3d;
+}
+
+.price {
+  font-size: 16px;
+  color: #290bef;
+  margin-bottom: 10px;
 }

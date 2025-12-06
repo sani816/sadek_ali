@@ -41,4 +41,7 @@ function loadPage(page) {
             .catch(error => console.error('Error loading page:', error));
     }
 }
-
+// JavaScript to populate the design name in the order form
+function showOrderForm(designName) {
+    document.getElementById('design-name').value = designName;
+}

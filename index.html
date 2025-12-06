@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,16 @@
             <span>JEELANI INTERIOR DESIGNS</span>
         </div>
         <nav>
+            <audio id="welcomeAudio" src="welcome.mp3"></audio>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('welcomeAudio');
+        audio.play().catch(() => {
+            document.body.addEventListener('click', () => audio.play(), { once: true });
+        });
+    });
+</script>
             <a href="#" onclick="loadPage('home')">Home</a>
             <div class="dropdown">
                 <a href="#" onclick="toggleDropdown()">Projects</a>
@@ -49,6 +59,16 @@
             <a href="alisksadek71@gmail.com">alisksadek71@gmail.com</a>
         </div>
     </footer>
+    <script>
+function scrollCarousel(direction) {
+  const container = document.getElementById('imageCarousel');
+  const scrollAmount = container.querySelector('.carousel-item').offsetWidth + 20;
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+</script>
 
     <script src="script.js"></script>
 </body>

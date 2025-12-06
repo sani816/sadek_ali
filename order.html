@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order This Design</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Order Your Design</h1></header>
+
+  <main class="order-form-container">
+    <form action="https://formspree.io/f/meogarql" method="POST">
+      <!-- Email subject line -->
+      <input type="hidden" name="_subject" value="🛒 New Order from Jeelani Interiors">
+      <!-- Redirect to confirmation page after submit -->
+      <input type="hidden" name="_next" value="confirmation.html">
+
+      <label>Selected Design:
+        <input type="text" id="designName" name="design" readonly>
+      </label>
+
+      <label>Your Name:
+        <input type="text" name="name" required>
+      </label>
+
+      <label>Your Email:
+        <input type="email" name="_replyto" required>
+      </label>
+
+      <label>Your Phone Number:
+        <input type="tel" name="phone" required>
+      </label>
+
+      <label>Adress:
+        <input type="Adress" name="Adress" required>
+      </label>
+
+      <label>Additional Message:
+        <textarea name="message"></textarea>
+      </label>
+      <button type="submit">Submit Order</button>
+    </form>
+  </main>
+
+  <script>
+    // Pre-fill the design name from URL
+    const params = new URLSearchParams(window.location.search);
+    const design = params.get('design') || '';
+    document.getElementById('designName').value = design;
+  </script>
+</body>
+</html>
